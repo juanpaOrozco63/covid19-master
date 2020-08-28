@@ -1,0 +1,48 @@
+<hr>
+<div class="container">
+    <h1 class="text-center">
+        Registrar posibles casos sospechosos
+    </h1>
+
+    <div class="row">
+        <div class="col">
+            <form [formGroup]="contactForm" (ngSubmit)="onSaveForm()">
+                <label for="fname">Nombre</label>
+                <input type="text" class="form-control" id="fname" formControlName="nombre" required placeholder="Nombre">
+
+
+                <label for="lname">Apellido</label>
+                <input type="text" class="form-control" id="lname" formControlName="apellido" required placeholder="Apellido" minlength="6">
+
+
+                <label for="id">Cédula</label>
+                <input type="number" class="form-control" id="id" formControlName="cedula" required placeholder="Cedula">
+
+
+                <label for="ed">Edad</label>
+                <input type="number" class="form-control" id="ed" formControlName="edad" required placeholder="Edad">
+
+
+                <label for="street">Dirección</label>
+                <input type="text" class="form-control" id="street" formControlName="direccion" required placeholder="Direccion">
+
+
+                <label for="com">Comuna</label>
+                <select class="form-control" id="com" formControlName="comuna" required>
+                    <option *ngFor="let c of comunas">{{c}}</option>
+                </select>
+
+                <label for="gen">Género</label>
+                <select class="form-control" id="gen" formControlName="sexo" required>
+                    <option *ngFor="let xxx of sexos">{{xxx}}</option>
+                </select>
+                <label for="sin">Sintomas</label>
+                <select multiple id="sin" formControlName="sintomas" class="selectpicker" required>
+                    <option *ngFor="let s of sinto" >{{s}}</option>
+                </select>
+                <hr>
+                <button type="submit" class="btn btn-danger btn-block">Enviar</button>
+            </form>
+        </div>
+    </div>
+    <button (click)="refresh()" class="btn btn-secondary btn-block">Mostrar Sintomas</button>
