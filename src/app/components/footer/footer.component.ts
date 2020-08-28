@@ -8,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class FooterComponent implements OnInit {
   
   autor: any = 'Juan Pablo Orozco';
+  autor2: any = 'Steven Calderon Guzman';
   anio :number;
   constructor() { 
 
